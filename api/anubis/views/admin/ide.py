@@ -40,7 +40,7 @@ def admin_ide_initialize():
         assignment_id=None,
         network_locked=False,
         privileged=True,
-        image="registry.osiris.services/anubis/theia-admin",
+        image="registry.digitalocean.com/anubis/theia-admin",
         repo_url="https://github.com/os3224/anubis-assignment-tests.git",
         options={'limits': {'cpu': '4', 'memory': '4Gi'}},
         active=True,
@@ -85,7 +85,7 @@ def admin_ide_initialize_custom(settings: dict, **_):
 
     network_locked = settings.get('network_locked', False)
     privileged = settings.get('privileged', True)
-    image = settings.get('image', 'registry.osiris.services/anubis/theia-admin')
+    image = settings.get('image', 'registry.digitalocean.com/anubis/theia-admin')
     repo_url = settings.get('repo_url', 'https://github.com/os3224/anubis-assignment-tests')
     options_str = settings.get('options', '{"limits": {"cpu": "4", "memory": "4Gi"}}')
 

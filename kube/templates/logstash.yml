@@ -20,6 +20,8 @@ spec:
       app: logstash
   template:
     metadata:
+      annotations:
+        linkerd.io/inject: enabled
       labels:
         app: logstash
         ecosystem: elk

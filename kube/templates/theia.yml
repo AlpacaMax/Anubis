@@ -25,6 +25,8 @@ spec:
       component: proxy
   template:
     metadata:
+      annotations:
+        linkerd.io/inject: enabled
       labels:
         app: theia
         role: proxy

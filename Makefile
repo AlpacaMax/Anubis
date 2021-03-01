@@ -36,7 +36,7 @@ help:
 build:
 	docker-compose build --parallel --pull $(BUILD_ALLWAYS)
 
-.PHONY: push         # Push images to registry.osiris.services (requires vpn)
+.PHONY: push         # Push images to registry.digitalocean.com (requires vpn)
 push:
 	docker-compose build --parallel --pull $(PUSH_SERVICES)
 	docker-compose push $(PUSH_SERVICES)

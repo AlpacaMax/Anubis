@@ -4,7 +4,7 @@ set -e
 cd $(dirname $(realpath $0))
 
 
-kubectl config use-context space
+#kubectl config use-context space
 
 
 if ! kubectl get namespace | grep anubis &> /dev/null; then
@@ -53,10 +53,10 @@ fi
 
 
 pushd ..
-if ! docker image ls | awk '{print $1}' | grep -w '^registry.osiris.services/anubis/theia-admin$' &>/dev/null; then
+if ! docker image ls | awk '{print $1}' | grep -w '^registry.digitalocean.com/anubis/theia-admin$' &>/dev/null; then
     EXTRA_BUILD="theia-admin"
 fi
-if ! docker image ls | awk '{print $1}' | grep -w '^registry.osiris.services/anubis/theia-xv6$' &>/dev/null; then
+if ! docker image ls | awk '{print $1}' | grep -w '^registry.digitalocean.com/anubis/theia-xv6$' &>/dev/null; then
     EXTRA_BUILD="${EXTRA_BUILD} theia-xv6"
 fi
 docker-compose build --parallel --pull api web logstash theia-proxy theia-init theia-sidecar ${EXTRA_BUILD}

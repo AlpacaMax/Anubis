@@ -43,7 +43,7 @@ def create_theia_pod_obj(theia_session: TheiaSession):
     # Init container
     init_container = client.V1Container(
         name="theia-init-{}-{}".format(theia_session.owner.netid, theia_session.id),
-        image="registry.osiris.services/anubis/theia-init:latest",
+        image="registry.digitalocean.com/anubis/theia-init:latest",
         image_pull_policy=os.environ.get("IMAGE_PULL_POLICY", default="Always"),
         env=[
             client.V1EnvVar(name="GIT_REPO", value=theia_session.repo_url),
@@ -102,7 +102,7 @@ def create_theia_pod_obj(theia_session: TheiaSession):
     if autosave:
         sidecar_container = client.V1Container(
             name="sidecar",
-            image="registry.osiris.services/anubis/theia-sidecar:latest",
+            image="registry.digitalocean.com/anubis/theia-sidecar:latest",
             image_pull_policy=os.environ.get("IMAGE_PULL_POLICY", default="Always"),
             env=[
                 client.V1EnvVar(
@@ -139,6 +139,9 @@ def create_theia_pod_obj(theia_session: TheiaSession):
         ),
         metadata=client.V1ObjectMeta(
             name="theia-{}-{}".format(theia_session.owner.netid, theia_session.id),
+            annotations={
+                'linkerd.io/inject': 'enabled',
+            },
             labels={
                 "app": "theia",
                 "role": "theia-session",

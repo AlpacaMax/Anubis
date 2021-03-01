@@ -1,3 +1,3 @@
 #!/bin/sh
 
-exec docker build -t registry.osiris.services/anubis/assignment/575ba490 .
+exec docker build -t registry.digitalocean.com/anubis/assignment/575ba490 .

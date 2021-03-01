@@ -16,6 +16,9 @@ spec:
   jobTemplate:
     spec:
       template:
+        metadata:
+          annotations:
+            linkerd.io/inject: enabled
         spec:
           restartPolicy: Never
           containers:

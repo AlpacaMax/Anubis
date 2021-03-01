@@ -14,13 +14,13 @@ api:
   healthCheck: true
   gunicorn_options: "--capture-output --enable-stdio-inheritance --preload --timeout 30"
 
-  image: "registry.osiris.services/anubis/api"
+  image: "registry.digitalocean.com/anubis/api"
   tag: "latest"
 
 static:
   replicas: 3
 
-  image: "registry.osiris.services/anubis/static"
+  image: "registry.digitalocean.com/anubis/static"
   tag: "latest"
   healthCheck: true
 
@@ -36,11 +36,11 @@ pipeline_api:
 
 web:
   replicas: 2
-  image: "registry.osiris.services/anubis/web"
+  image: "registry.digitalocean.com/anubis/web"
   tag: "latest"
 
 logstash:
-  image: "registry.osiris.services/anubis/logstash"
+  image: "registry.digitalocean.com/anubis/logstash"
   tag: "latest"
 
 rpc_workers:
@@ -52,5 +52,5 @@ theia:
   proxy:
     replicas: 10
     domain: "ide.anubis.osiris.services"
-    image: "registry.osiris.services/anubis/theia-proxy"
+    image: "registry.digitalocean.com/anubis/theia-proxy"
     tag: "latest"

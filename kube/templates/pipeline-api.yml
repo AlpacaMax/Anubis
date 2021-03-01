@@ -23,6 +23,8 @@ spec:
   {{- end }}
   template:
     metadata:
+      annotations:
+        linkerd.io/inject: enabled
       labels:
         app: pipeline-api
     spec:

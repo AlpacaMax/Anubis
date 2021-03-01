@@ -141,7 +141,7 @@ class Assignment(db.Model):
     )
     ide_enabled = db.Column(db.Boolean, default=True)
     theia_image = db.Column(
-        db.String(128), default="registry.osiris.services/anubis/theia-xv6"
+        db.String(128), default="registry.digitalocean.com/anubis/theia-xv6"
     )
 
     # Dates
@@ -567,7 +567,7 @@ class TheiaSession(db.Model):
     state = db.Column(db.String(128))
     cluster_address = db.Column(db.String(256), nullable=True, default=None)
     image = db.Column(
-        db.String(128), default="registry.osiris.services/anubis/theia-xv6"
+        db.String(128), default="registry.digitalocean.com/anubis/theia-xv6"
     )
     options = db.Column(MutableJson, nullable=False, default=lambda: dict())
     network_locked = db.Column(db.Boolean, default=True)

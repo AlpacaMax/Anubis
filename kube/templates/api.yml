@@ -23,6 +23,8 @@ spec:
   {{- end }}
   template:
     metadata:
+      annotations:
+        linkerd.io/inject: enabled
       labels:
         app: api
     spec:
@@ -111,6 +113,9 @@ spec:
   backoffLimit: 4
   ttlSecondsAfterFinished: 30
   template:
+    metadata:
+      annotations:
+        linkerd.io/inject: enabled
     spec:
       restartPolicy: Never
       containers:
@@ -148,6 +153,8 @@ spec:
       app: adminer
   template:
     metadata:
+      annotations:
+        linkerd.io/inject: enabled
       labels:
         app: adminer
     spec:

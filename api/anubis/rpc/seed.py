@@ -36,7 +36,7 @@ def create_assignment(course, users):
     assignment = Assignment(
         name="uniq",
         unique_code='575ba490',
-        pipeline_image="registry.osiris.services/anubis/assignment/575ba490",
+        pipeline_image="registry.digitalocean.com/anubis/assignment/575ba490",
         hidden=False,
         github_classroom_url='http://localhost',
         release_date=datetime.now() - timedelta(hours=2),

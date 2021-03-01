@@ -8,7 +8,7 @@ assignment:
 
   # Don't change these!
   unique_code: "575ba490"
-  pipeline_image: "registry.osiris.services/anubis/assignment/575ba490"
+  pipeline_image: "registry.digitalocean.com/anubis/assignment/575ba490"
 
   # Specify the importaint dates here
   date:

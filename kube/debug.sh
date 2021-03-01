@@ -42,7 +42,7 @@ popd
 
 pushd ..
 # Only build theia if it doesnt already exist (it's a long build)
-if ! docker image ls | awk '{print $1}' | grep -w '^registry.osiris.services/anubis/theia-admin$' &>/dev/null; then
+if ! docker image ls | awk '{print $1}' | grep -w '^registry.digitalocean.com/anubis/theia-admin$' &>/dev/null; then
     EXTRA_BUILD="theia-admin theia-xv6"
 fi
 
