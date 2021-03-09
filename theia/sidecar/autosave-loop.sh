@@ -11,6 +11,7 @@ if [ -n "${GIT_CRED}" ]; then
 fi
 
 set +e
+set -x
 while true; do
     /autosave.sh
     sleep "5m"
