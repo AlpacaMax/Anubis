@@ -97,6 +97,11 @@ export default function Submission() {
       const newSubmission = translateSubmission(data.submission);
       setSubmission(newSubmission);
 
+      if (newSubmission.error) {
+        setErrorStop(true);
+        return;
+      }
+
       if (!submission) {
         return continueSubscribe();
       }
